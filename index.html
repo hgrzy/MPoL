@@ -9,7 +9,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Million Points of Light (MPoL) &mdash; MPoL 0.1.1.dev0 documentation</title>
+  <title>Million Points of Light (MPoL) &mdash; MPoL 0.1.1 documentation</title>
   
 
   
@@ -42,6 +42,7 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="_static/bullets.css" type="text/css" />
   <link rel="stylesheet" href="_static/css/faculty.css" type="text/css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans|Roboto:400,700|Roboto+Mono:400,700&display=swap" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
@@ -73,7 +74,7 @@
   
     
     
-      <div class="version">0.1.1.dev0</div>
+      <div class="version">0.1.1</div>
     
   
 
@@ -105,9 +106,12 @@
 </ul>
 <p class="caption"><span class="caption-text">Tutorials</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/PyTorch.html">Introduction to PyTorch Tensors and Gradient Descent</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials/gridder.html">Gridding and diagnostic images</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials/optimization.html">Optimization Loop</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials/crossvalidation.html">Cross validation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/gpu_setup.html">GPU Acceleration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/initializedirtyimage.html">Initializing Model with the Dirty Image</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
@@ -193,6 +197,7 @@
 <li class="toctree-l2"><a class="reference internal" href="installation.html#using-pip">Using pip</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation.html#from-source">From source</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation.html#upgrading">Upgrading</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#using-cuda-acceleration">Using CUDA acceleration</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="units-and-conventions.html">Units and Conventions</a><ul>
@@ -225,11 +230,19 @@
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Tutorials</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/PyTorch.html">Introduction to PyTorch Tensors and Gradient Descent</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/PyTorch.html#Introduction-to-Tensors">Introduction to Tensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/PyTorch.html#Calculating-Gradients">Calculating Gradients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/PyTorch.html#Optimizing-a-Function-with-Gradient-Descent">Optimizing a Function with Gradient Descent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/PyTorch.html#Additional-Resources">Additional Resources</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials/gridder.html">Gridding and diagnostic images</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="tutorials/gridder.html#Importing-data">Importing data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tutorials/gridder.html#The-GridCoords-object">The GridCoords object</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tutorials/gridder.html#The-Gridder-object">The Gridder object</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tutorials/gridder.html#Visualizing-the-images">Visualizing the images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/gridder.html#Checking-data-weights">Checking data weights</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials/optimization.html">Optimization Loop</a><ul>
@@ -252,21 +265,40 @@
 <li class="toctree-l2"><a class="reference internal" href="tutorials/crossvalidation.html#Results">Results</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/gpu_setup.html">GPU Acceleration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/gpu_setup.html#installation-and-configuration">Installation and Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/gpu_setup.html#why-use-the-gpu">Why use the GPU?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/gpu_setup.html#using-the-gpu-as-part-of-pytorch-and-mpol">Using the GPU as part of PyTorch and MPoL</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/initializedirtyimage.html">Initializing Model with the Dirty Image</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/initializedirtyimage.html#Image-Setup">Image Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/initializedirtyimage.html#Model-and-Optimization-Setup">Model and Optimization Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/initializedirtyimage.html#Loss-Function">Loss Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/initializedirtyimage.html#Training-Loop">Training Loop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/initializedirtyimage.html#Loading-the-Model">Loading the Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/initializedirtyimage.html#Conclusion">Conclusion</a></li>
+</ul>
+</li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
 </div>
 <p>If you use MPoL in your research, please cite us!</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@software</span><span class="p">{</span><span class="n">MPoL</span><span class="p">,</span>
-<span class="n">author</span>       <span class="o">=</span> <span class="p">{</span><span class="n">Ian</span> <span class="n">Czekala</span><span class="p">,</span> <span class="n">Brianna</span> <span class="n">Zawadzki</span><span class="p">,</span> <span class="ow">and</span>
-                <span class="n">Ryan</span> <span class="n">Loomis</span><span class="p">},</span>
-<span class="n">title</span>        <span class="o">=</span> <span class="p">{</span><span class="n">iancze</span><span class="o">/</span><span class="n">MPoL</span><span class="p">:</span> <span class="n">A</span> <span class="n">flexible</span> <span class="n">Python</span> <span class="n">Framework</span> <span class="k">for</span> <span class="n">Regularized</span> <span class="n">Maximum</span> <span class="n">Likelihood</span> <span class="n">Imaging</span><span class="p">},</span>
-<span class="n">month</span>        <span class="o">=</span> <span class="n">feb</span><span class="p">,</span>
-<span class="n">year</span>         <span class="o">=</span> <span class="mi">2020</span><span class="p">,</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@software</span><span class="p">{</span><span class="n">ian_czekala_2021_4939048</span><span class="p">,</span>
+<span class="n">author</span>       <span class="o">=</span> <span class="p">{</span><span class="n">Ian</span> <span class="n">Czekala</span> <span class="ow">and</span>
+               <span class="n">Brianna</span> <span class="n">Zawadzki</span> <span class="ow">and</span>
+               <span class="n">Ryan</span> <span class="n">Loomis</span> <span class="ow">and</span>
+               <span class="n">Hannah</span> <span class="n">Grzybowski</span> <span class="ow">and</span>
+               <span class="n">Robert</span> <span class="n">Frazier</span> <span class="ow">and</span>
+               <span class="n">Tyler</span> <span class="n">Quinn</span><span class="p">},</span>
+<span class="n">title</span>        <span class="o">=</span> <span class="p">{</span><span class="n">MPoL</span><span class="o">-</span><span class="n">dev</span><span class="o">/</span><span class="n">MPoL</span><span class="p">:</span> <span class="n">v0</span><span class="mf">.1.1</span> <span class="n">Release</span><span class="p">},</span>
+<span class="n">month</span>        <span class="o">=</span> <span class="n">jun</span><span class="p">,</span>
+<span class="n">year</span>         <span class="o">=</span> <span class="mi">2021</span><span class="p">,</span>
 <span class="n">publisher</span>    <span class="o">=</span> <span class="p">{</span><span class="n">Zenodo</span><span class="p">},</span>
-<span class="n">version</span>      <span class="o">=</span> <span class="p">{</span><span class="n">v0</span><span class="mf">.0.4</span><span class="p">},</span>
-<span class="n">doi</span>          <span class="o">=</span> <span class="p">{</span><span class="mf">10.5281</span><span class="o">/</span><span class="n">zenodo</span><span class="mf">.3647603</span><span class="p">},</span>
-<span class="n">url</span>          <span class="o">=</span> <span class="p">{</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">doi</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="mf">10.5281</span><span class="o">/</span><span class="n">zenodo</span><span class="mf">.3647603</span><span class="p">}</span>
+<span class="n">version</span>      <span class="o">=</span> <span class="p">{</span><span class="n">v0</span><span class="mf">.1.1</span><span class="p">},</span>
+<span class="n">doi</span>          <span class="o">=</span> <span class="p">{</span><span class="mf">10.5281</span><span class="o">/</span><span class="n">zenodo</span><span class="mf">.4939048</span><span class="p">},</span>
+<span class="n">url</span>          <span class="o">=</span> <span class="p">{</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">doi</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="mf">10.5281</span><span class="o">/</span><span class="n">zenodo</span><span class="mf">.4939048</span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>

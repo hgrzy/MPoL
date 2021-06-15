@@ -9,7 +9,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Installation &mdash; MPoL 0.1.1.dev0 documentation</title>
+  <title>Installation &mdash; MPoL 0.1.1 documentation</title>
   
 
   
@@ -42,6 +42,7 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="_static/bullets.css" type="text/css" />
   <link rel="stylesheet" href="_static/css/faculty.css" type="text/css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans|Roboto:400,700|Roboto+Mono:400,700&display=swap" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
@@ -74,7 +75,7 @@
   
     
     
-      <div class="version">0.1.1.dev0</div>
+      <div class="version">0.1.1</div>
     
   
 
@@ -103,6 +104,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#using-pip">Using pip</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#from-source">From source</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#upgrading">Upgrading</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-cuda-acceleration">Using CUDA acceleration</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="units-and-conventions.html">Units and Conventions</a></li>
@@ -111,9 +113,12 @@
 </ul>
 <p class="caption"><span class="caption-text">Tutorials</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/PyTorch.html">Introduction to PyTorch Tensors and Gradient Descent</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials/gridder.html">Gridding and diagnostic images</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials/optimization.html">Optimization Loop</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials/crossvalidation.html">Cross validation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/gpu_setup.html">GPU Acceleration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/initializedirtyimage.html">Initializing Model with the Dirty Image</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
@@ -224,6 +229,11 @@ $ pip install .
 &gt;&gt;&gt; print(mpol.__version__)
 </pre></div>
 </div>
+</section>
+<section id="using-cuda-acceleration">
+<h2>Using CUDA acceleration<a class="headerlink" href="#using-cuda-acceleration" title="Permalink to this headline">¶</a></h2>
+<p>MPoL uses PyTorch for its Neural Networks as seen in the <cite>Optimization Loop</cite> tutorial. If you are interested in using PyTorch’s full potential by utilizing a Nvidia graphics card, then the CUDA tool kit will need to be installed (TensorVision is also required). More information on this is available in the <cite>GPU Tutorial</cite> page. It is worth noting that PyTorch may need to be (re)installed separately using a specific <cite>pip</cite> for your system.</p>
+<p>More information on this can be found on the PyTorch homepage: <a class="reference external" href="pytorch.org">pytorch.org</a>.</p>
 </section>
 </section>
 
