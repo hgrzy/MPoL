@@ -33,6 +33,7 @@
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "document", "processHtmlClass": "math|output_area"}}</script>
+        <script src="https://buttons.github.io/buttons.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -50,7 +51,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Optimization Loop" href="optimization.html" />
-    <link rel="prev" title="Introduction to PyTorch Tensors and Gradient Descent" href="PyTorch.html" /> 
+    <link rel="prev" title="Introduction to PyTorch: Tensors and Gradient Descent" href="PyTorch.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -102,14 +103,15 @@
             
               <p class="caption"><span class="caption-text">User Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rml_intro.html">Introduction to Regularized Maximum Likelihood Imaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">MPoL Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../units-and-conventions.html">Units and Conventions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../developer-documentation.html">Developer Documentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api.html">API</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Tutorials</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="PyTorch.html">Introduction to PyTorch Tensors and Gradient Descent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PyTorch.html">Introduction to PyTorch: Tensors and Gradient Descent</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Gridding and diagnostic images</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#Importing-data">Importing data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#The-GridCoords-object">The GridCoords object</a></li>
@@ -121,7 +123,8 @@
 <li class="toctree-l1"><a class="reference internal" href="optimization.html">Optimization Loop</a></li>
 <li class="toctree-l1"><a class="reference internal" href="crossvalidation.html">Cross validation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gpu_setup.html">GPU Acceleration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="initializedirtyimage.html">Initializing Model with the Dirty Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="initializedirtyimage.html">Initializing with the Dirty Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../large-tutorials/HD143006_part_1.html">HD143006 Tutorial Part 1</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
@@ -180,7 +183,7 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/tutorials/gridder.ipynb.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/ci-tutorials/gridder.ipynb.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -500,7 +503,7 @@ conjugate of the visibilities. So, if you find that your image appears upside do
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">mpol</span> <span class="kn">import</span> <span class="n">gridding</span><span class="p">,</span> <span class="n">coordinates</span>
+<span></span><span class="kn">from</span> <span class="nn">mpol</span> <span class="kn">import</span> <span class="n">coordinates</span><span class="p">,</span> <span class="n">gridding</span>
 </pre></div>
 </div>
 </div>
@@ -633,7 +636,7 @@ gridded visibilities, frequently called the “dirty beam” and “dirty image�
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/tutorials_gridder_23_0.png" class="no-scaled-link" src="../_images/tutorials_gridder_23_0.png" style="width: 654px; height: 344px;" />
+<img alt="../_images/ci-tutorials_gridder_23_0.png" class="no-scaled-link" src="../_images/ci-tutorials_gridder_23_0.png" style="width: 654px; height: 344px;" />
 </div>
 </div>
 <p>If you were working with this measurement set in CASA, it’s a good idea to compare the dirty image produced here to the dirty image from CASA (i.e., produced by <code class="docutils literal notranslate"><span class="pre">tclean</span></code> with zero CLEAN iterations). You should confirm that these two dirty images look very similar (i.e., nearly but most likely not quite to numerical precision) before moving on to regularized maximum imaging. If your image appears upside down or mirrored, check whether you converted your visibility data from the CASA baseline
@@ -667,7 +670,7 @@ sense. To alert the user to the possibility that their weights may be incorrectl
         <a href="optimization.html" class="btn btn-neutral float-right" title="Optimization Loop" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="PyTorch.html" class="btn btn-neutral float-left" title="Introduction to PyTorch Tensors and Gradient Descent" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="PyTorch.html" class="btn btn-neutral float-left" title="Introduction to PyTorch: Tensors and Gradient Descent" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
